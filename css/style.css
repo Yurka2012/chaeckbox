@@ -1,0 +1,56 @@
+/* Общие стили для тогла */
+.toggle {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  /* Скрытие оригинального чекбокса */
+  .toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* Стилизация переключателя */
+  .slider {
+    position: absolute;
+    cursor: url(cursor.png);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #000000;
+    transition: 0.4s;
+    border-radius: 34px;
+  }
+  
+  /* При наведении на тогл */
+  .toggle:hover .slider {
+    background-color: #ff0000;
+  }
+  
+  /* Отображение тогла во включенном состоянии */
+  .toggle input:checked + .slider {
+    background-color: #9e9403;
+  }
+  
+  /* Создание круглого бегунка (handle) */
+  .slider::before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 15px;
+    bottom: 8px;
+    background-color: rgb(74, 57, 227);
+    transition: 1s;
+    border-radius: 20%;
+  }
+  
+  /* Отображение бегунка при включенном тогле */
+  .toggle input:checked + .slider::before {
+    transform: translateX(13px);
+  }
+  
